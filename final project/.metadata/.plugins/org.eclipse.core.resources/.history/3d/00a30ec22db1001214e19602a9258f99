@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Google Visualization API Sample
+    </title>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Indian', 66],
+          ['Korean', 48],
+          ['Greek', 44],
+          ['Mediterranean', 73],
+ ['Chinese', 119],
+ ['French', 25],
+ ['Thai', 67],
+ ['Japanese', 81],
+ ['Mexican', 136],
+ ['Italian', 115]
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.PieChart(document.getElementById('visualization')).
+            draw(data, {title:"Popularity of cuisine type based on demographics"});
+      }
+      
+      var data = google.visualization.arrayToDataTable([
+                                                        
+                                                        ['Positive', 121126],
+                                                        ['Negative', 31201]
+                                                        
+                                                      ]);
+                                                    
+                                                      // Create and draw the visualization.
+                                                      new google.visualization.PieChart(document.getElementById('visualization1')).
+                                                          draw(data, {title:"Sentiment Analysis on Reviews"});
+                                                    }
+
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+  <table><tr>
+  <td>
+    <div id="visualization" style="width: 900px; height: 800px;"></div></td>
+    <td></td><div id="visualization1" style="width: 900px; height: 800px;"></div></td></tr></table>
+  </body>
+</html>
+
+
+
